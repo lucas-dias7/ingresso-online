@@ -2,13 +2,18 @@ function comprar() {
     let tipo = document.getElementById('tipo-ingresso');
     let qtd = document.getElementById('qtd').value;
 
-    if (tipo.value == 'pista') {
+    if (qtd < 1) {
+        alert('Insira uma quantidade valida.');
+    } else {
+        if (tipo.value == 'pista') {
         comprarPista(qtd);
     } else if (tipo.value == 'superior') {
         comprarSuperior(qtd);
     } else {
         comprarInferior(qtd);
     }
+    }
+    document.getElementById('qtd').value = '';
 }
 
 function comprarPista(qtd) {
